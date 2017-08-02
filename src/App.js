@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
+import Input from './components/InputPara';
 import Display from './components/UserSelection';
 
 const ROOT_URL="https://baconipsum.com/api/?type=all-meat"; //define a constant to hold the api URL 
@@ -8,12 +9,12 @@ const ROOT_URL="https://baconipsum.com/api/?type=all-meat"; //define a constant 
 
 //class that extends React components 
 class App extends Component {
-  constructor(){
-    super(); //call the super class index.js 
+  constructor(props){
+    super(props); //call the super class index.js 
 
     //store state paras and text that keeps changing upon user request
     this.state={
-      paras:4,
+      paras:2,
       text:''
     };
   }
@@ -38,11 +39,18 @@ class App extends Component {
         console.log(err);
     });
 }
+  changePara=(num)=>{
+    
+    this.setState({ paras:num}, this.fetchLpsum);
+  }
   
   render() {
     return (
       <div className="App">
-      <Display value={this.state.text}/>
+
+        <Input  value={this.state.paras} onChange={this.changePara}/>
+   
+        <Display value={this.state.text}/>
       </div>
     );
   }
