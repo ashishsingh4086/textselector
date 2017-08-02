@@ -8,13 +8,11 @@ class Input extends Component {
         paraChange: this.props.value
         };
     }
-onChange=(event)=>{
+onChange=(term)=>{
 
-    this.setState({
-        value:event.target.value},
+    this.setState({term});
    
-            this.props.onChange(this.state.value)
-        );
+     this.props.onChange(term);
 }
 
 
@@ -22,11 +20,12 @@ onChange=(event)=>{
 render(){
     return(
         <div>
-  
-              <input type="number" className="form-control" inputMode="numeric" onChange={this.onChange} value={this.state.value} placeholder="enter paragraph"/>
-        
-
-            </div>
+            <input type="number" 
+              className="form-inline" 
+              value={this.state.value}  
+              onChange={event=>this.onChange(event.target.value)} 
+              placeholder="enter paragraph"/>
+        </div>
 
     );
 }

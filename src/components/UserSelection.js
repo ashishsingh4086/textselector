@@ -11,8 +11,10 @@ class Display extends Component {
 
 render(){
     return(
-        <div>
+        <div className="jumbotron">
+            <li className="list-group-item">
             {this.props.value}
+            </li>
             </div>
 
     );
