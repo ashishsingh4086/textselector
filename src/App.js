@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
+import Display from './components/UserSelection';
 
 const ROOT_URL="https://baconipsum.com/api/?type=all-meat"; //define a constant to hold the api URL 
 
@@ -41,7 +42,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <input/>
+      <Display value={this.state.text}/>
       </div>
     );
   }
