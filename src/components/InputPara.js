@@ -10,8 +10,7 @@ class Input extends Component {
     }
 onChange=(term)=>{
 
-    this.setState({term});
-   
+    this.setState({term});   
      this.props.onChange(term);
 }
 

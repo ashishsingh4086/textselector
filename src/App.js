@@ -20,13 +20,16 @@ class App extends Component {
             paras: 1,
             text: ''
         };
+
+      
     }
 
     //we need to fetch some data as soon as the component is rendered.
     //this can be avoided too but is a good practice to have some preloaded data as our initial paras  length is 4
-    componentDidMount() {
-        this.fetchLpsum();
-    }
+ 
+     componentDidMount(){
+         this.fetchLpsum();
+     }
 
     //function to perform the ajax request using axios. Fetch can be used to 
     fetchLpsum = () => {
@@ -56,7 +59,7 @@ class App extends Component {
 
         <Input  value={this.state.paras} onChange={this.changePara}/>
         <div className="Display">
-            <Display value={this.state.text}/>
+            <Display getText={this.state.text}/>
          </div>
       </div>
     );
